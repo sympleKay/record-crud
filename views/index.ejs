@@ -1,0 +1,71 @@
+<%- include ('partials/header') %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary mt-3">
+                  <i class="fa fa-font fa-5x"></i><a class="navbar-brand text-uppercase font-weight-bolder" href="/">ajof and associates</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="/employee/add">Add New Employee</a>
+                      </div>
+                    </div>
+                  </nav>
+            </div>   
+        </div>
+            <!--
+                ==============================
+                    Table to show all employee
+                ==============================
+            -->
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center text-uppercase mt-5">employee records</h1>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-primary mt-2 table-hover table-responsive-md">
+                    <thead class="thead-dark text-center">
+                      <th>S/No</th>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Tel. No</th>
+                      <th>Email</th>
+                      <th>Sex</th>
+                      <th>Qualification</th>
+                      <th>Date of Birth</th>
+                      <th>Date of Appointment</th>
+                      <th>Actions</th>
+                    </thead>
+                    <tbody>
+                      <% for (let i = 0; i < myEmployees.length; i++) {%>
+                          <tr>
+                            
+                            <td class="text-capitalize"><%= i + 1 %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].firstName %> <%= myEmployees[i].lastName %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].position %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].telNo %></td>
+                            <td class=""><%= myEmployees[i].email %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].gender %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].qualification %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].dateOfBirth %></td>
+                            <td class="text-capitalize"><%= myEmployees[i].appointmentDate %></td>
+                            <td class="text-center"> 
+                              <a href="/employee/edit/<%= myEmployees[i]._id %>" class=""><i class="fa fa-edit text-primary"></i></a> &nbsp;
+                              <a href="#" class="delete-employee" data-id="<%= myEmployees[i]._id %>"><i class="fa fa-trash text-danger"></i></a>
+                          </td>
+                          
+                        </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/footer') %>

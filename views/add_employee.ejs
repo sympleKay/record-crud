@@ -1,0 +1,81 @@
+<%- include ('partials/header') %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary mt-3">
+                  <i class="fa fa-font fa-5x"></i><a class="navbar-brand text-uppercase font-weight-bolder" href="/">ajof and associates</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                      </div>
+                    </div>
+                  </nav>
+            </div>   
+        </div>
+        <div class="row">
+            <div class="col">
+                <section class="get-in-touch">
+                    <h1 class="title text-uppercase">add new employee</h1>
+            <!--
+                ==============================
+                    form to add employee
+                ==============================
+            -->
+                    <form method="POST" action="/employee/add" class="contact-form row">
+                        <div class="form-field col-lg-4">
+                            <input id="first_name" class="input-text js-input" type="text" name="first_name" required>
+                            <label class="label" for="first_name">First Name</label>
+                       </div>
+                       <div class="form-field col-lg-4">
+                            <input id="mid_name" class="input-text js-input" type="text" name="mid_name" required>
+                            <label class="label" for="mid_name">Middle Name</label>
+                        </div>
+                        <div class="form-field col-lg-4">
+                            <input id="last_name" class="input-text js-input" type="text" name="last_name" required>
+                            <label class="label" for="last_name">Last Name</label>
+                       </div>
+                       <div class="form-field col-lg-6">
+                            <input id="dob" class="input-text js-input" type="date" name="dob" required>
+                            <label class="label" for="dob">Date of Birth</label>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input id="doa" class="input-text js-input" type="date" name="doa" required>
+                            <label class="label" for="doa">Date of Appointment</label>
+                       </div>
+                       <div class="form-field col-lg-6">
+                            <input id="postion" class="input-text js-input" type="text" name="postion" required>
+                            <label class="label" for="postion">Position</label>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input id="tel_no" class="input-text js-input" type="tel" name="tel_no" required>
+                            <label class="label" for="tel_no">Phone Number</label>
+                       </div>
+                       <div class="form-field col-lg-6">
+                            <input id="email" class="input-text js-input" type="email" name="email" required>
+                            <label class="label" for="email">E-mail</label>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input id="qualification" class="input-text js-input" type="text" name="qualification" required>
+                            <label class="label" for="qualification">Qualification</label>
+                        </div>
+                        <div class="form-field col-lg-12">
+                            <select name="gender" id="gender" class="input-text js-input">
+                                <option value=""></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <label for="gender" class="label">Gender</label>
+                       </div>
+                       <div class="form-field col-lg-12">
+                           <button type="submit" class="submit-btn">Add Record</button>
+                       </div>
+                    </form>
+                  </section>                   
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/footer') %>
